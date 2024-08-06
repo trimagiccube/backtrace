@@ -1,0 +1,17 @@
+build
+g++ -o stack_trace_example stack_trace_example.cpp -rdynamic
+
+exec
+./stack_trace_example
+
+output log
+ aigcic-h3c-01  xiaowen.yan  ~ > test > backtrace  ./stack_trace_example 
+ Stack trace:
+ ./stack_trace_example(_Z15printStackTracev+0x2c) [0x556335e70255]
+ ./stack_trace_example(_Z9functionCv+0xd) [0x556335e7030f]
+ ./stack_trace_example(_Z9functionBv+0xd) [0x556335e7031f]
+ ./stack_trace_example(_Z9functionAv+0xd) [0x556335e7032f]
+ ./stack_trace_example(main+0xd) [0x556335e7033f]
+ /lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f0cf4629d90]
+ /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f0cf4629e40]
+ ./stack_trace_example(_start+0x25) [0x556335e70165]
